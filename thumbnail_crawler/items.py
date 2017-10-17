@@ -11,6 +11,6 @@ import scrapy
 class ThumbnailCrawlerItem(scrapy.Item):
     title = scrapy.Field()
     info = scrapy.Field()
-    image = scrapy.Field()
+    images = scrapy.Field()
     image_urls = scrapy.Field()
 
