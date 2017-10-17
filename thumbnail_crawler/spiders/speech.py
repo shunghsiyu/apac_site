@@ -4,6 +4,8 @@ import re
 import scrapy
 
 from ..items import ThumbnailCrawlerItem
+from ..utils import url_list
+
 
 class SpeechSpider(scrapy.Spider):
     name = 'speech'
@@ -11,7 +13,8 @@ class SpeechSpider(scrapy.Spider):
     youtube_id_regex = re.compile(r'https://www.youtube.com/embed/([^?]*)?.*')
 
     def start_requests(self):
-        return [scrapy.Request(url='http://speech.ntu.edu.tw/ntuspeech/Video/id-1837')]
+        for url in url_list(self):
+            yield scrapy.Request(url)
 
     def parse(self, response):
         youtube_url = response.css('#youtube_frame::attr(src)').extract_first()
