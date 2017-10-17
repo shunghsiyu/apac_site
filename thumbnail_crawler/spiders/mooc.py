@@ -19,7 +19,13 @@ class MoocSpider(scrapy.Spider):
     def parse(self, response):
         banner_style = response.css('#rendered-content div.body-container::attr(style)').extract_first()
         banner_url = self.banner_url(banner_style)
-        return ThumbnailCrawlerItem(image_urls=[banner_url])
+        title = response.css('#rendered-content div.body-container h1.title::text').extract_first()
+        info = response.css('div.about-section-wrapper div.content-inner p.course-description::text').extract_first()
+        return ThumbnailCrawlerItem(
+            title=title,
+            info=info,
+            image_urls=[banner_url],
+        )
 
     def banner_url(self, style):
         return self.banner_url_regex.match(style).group(1)
