@@ -20,7 +20,13 @@ class SpeechSpider(scrapy.Spider):
         youtube_url = response.css('#youtube_frame::attr(src)').extract_first()
         youtube_id = self.youtube_id(youtube_url)
         thumbnail_url = 'https://img.youtube.com/vi/{}/hqdefault.jpg'.format(youtube_id)
-        return ThumbnailCrawlerItem(image_urls=[thumbnail_url])
+        title = ''.join(response.css('div.video-infoall h4.video-name *::text').extract()).strip()
+        info = response.css('div.video-infoall p.video-info::text').extract_first().strip()
+        return ThumbnailCrawlerItem(
+            title=title,
+            info=info,
+            image_urls=[thumbnail_url],
+        )
 
     def youtube_id(self, url):
         return self.youtube_id_regex.match(url).group(1)
