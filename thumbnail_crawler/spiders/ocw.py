@@ -11,8 +11,7 @@ class OcwSpider(scrapy.Spider):
     start_urls = ['http://ocw.aca.ntu.edu.tw/']
 
     def start_requests(self):
-        for url in url_list(self):
-            yield scrapy.Request(url)
+        return list(url_list(self))
 
     def parse(self, response):
         image_url = response.css('#course_pic img::attr(src)').extract_first()
@@ -26,5 +25,6 @@ class OcwSpider(scrapy.Spider):
             info=info,
             image_urls=[image_url],
             source=self.name,
+            category=response.meta['category'],
         )
 

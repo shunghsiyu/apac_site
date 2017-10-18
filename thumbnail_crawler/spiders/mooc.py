@@ -13,8 +13,7 @@ class MoocSpider(scrapy.Spider):
     banner_url_regex = re.compile(r'background-image:url\(https://\w+.cloudfront.net/api/utilities/v1/imageproxy/(https?://[^?]+)[^)]*\);')
 
     def start_requests(self):
-        for url in url_list(self):
-            yield scrapy.Request(url)
+        return list(url_list(self))
 
     def parse(self, response):
         banner_style = response.css('#rendered-content div.body-container::attr(style)').extract_first()
@@ -26,6 +25,7 @@ class MoocSpider(scrapy.Spider):
             info=info,
             image_urls=[banner_url],
             source=self.name,
+            category=response.meta['category'],
         )
 
     def banner_url(self, style):
