@@ -10,7 +10,7 @@ from ..utils import url_list
 class MoocSpider(scrapy.Spider):
     name = 'mooc'
     allowed_domains = ['zh-tw.coursera.org']
-    banner_url_regex = re.compile(r'background-image:url\(https://\w+.cloudfront.net/api/utilities/v1/imageproxy/(https?://[^)]+)\);')
+    banner_url_regex = re.compile(r'background-image:url\(https://\w+.cloudfront.net/api/utilities/v1/imageproxy/(https?://[^?]+)[^)]*\);')
 
     def start_requests(self):
         for url in url_list(self):
