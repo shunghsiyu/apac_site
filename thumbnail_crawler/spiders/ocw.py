@@ -25,5 +25,6 @@ class OcwSpider(scrapy.Spider):
             title=title,
             info=info,
             image_urls=[image_url],
+            source=self.name,
         )
 

@@ -25,6 +25,7 @@ class MoocSpider(scrapy.Spider):
             title=title,
             info=info,
             image_urls=[banner_url],
+            source=self.name,
         )
 
     def banner_url(self, style):
