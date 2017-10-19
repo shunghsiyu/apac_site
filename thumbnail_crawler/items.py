@@ -16,4 +16,5 @@ class ThumbnailCrawlerItem(scrapy.Item):
     image_urls = scrapy.Field()
     source = scrapy.Field()
     category = scrapy.Field()
+    course_url = scrapy.Field()
 

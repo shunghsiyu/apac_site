@@ -29,5 +29,6 @@ class OcwSpider(scrapy.Spider):
             image_urls=[image_url],
             source=self.name,
             category=response.meta['category'],
+            course_url=response.url,
         )
 

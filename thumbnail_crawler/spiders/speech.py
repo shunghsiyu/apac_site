@@ -35,6 +35,7 @@ class SpeechSpider(scrapy.Spider):
             image_urls=image_urls,
             source=self.name,
             category=response.meta['category'],
+            course_url=response.url,
         )
 
     def youtube_id(self, url):
