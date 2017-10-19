@@ -17,14 +17,17 @@ class SpeechSpider(scrapy.Spider):
 
     def parse(self, response):
         youtube_url = response.css('#youtube_frame::attr(src)').extract_first()
-        youtube_id = self.youtube_id(youtube_url) if youtube_url else None
-        thumbnail_url = 'https://img.youtube.com/vi/{}/hqdefault.jpg'.format(youtube_id)
+        image_urls = []
+        if youtube_url:
+            youtube_id = self.youtube_id(youtube_url)
+            thumbnail_url = 'https://img.youtube.com/vi/{}/hqdefault.jpg'.format(youtube_id)
+            image_urls.append(thumbnail_url)
         title = ''.join(response.css('div.video-infoall h4.video-name *::text').extract()).strip()
         info = response.css('div.video-infoall p.video-info::text').extract_first().strip()
         return ThumbnailCrawlerItem(
             title=title,
             info=info,
-            image_urls=[thumbnail_url],
+            image_urls=image_urls,
             source=self.name,
             category=response.meta['category'],
         )
