@@ -19,9 +19,14 @@ class MoocSpider(scrapy.Spider):
         banner_style = response.css('#rendered-content div.body-container::attr(style)').extract_first()
         banner_url = self.banner_url(banner_style)
         title = response.css('#rendered-content div.body-container h1.title::text').extract_first()
+        instructors = [''.join(response.css('div.instructor-info p.instructor-name ::text').extract()[2:])]
+        departments = response.css('div.instructor-info div.instructor-bio::text').extract()
+        if departments:
+            instructors = [instructor+' '+department for instructor, department in zip(instructors, departments)]
         info = response.css('div.about-section-wrapper div.content-inner p.course-description::text').extract_first()
         return ThumbnailCrawlerItem(
             title=title,
+            instructors=instructors,
             info=info,
             image_urls=[banner_url],
             source=self.name,

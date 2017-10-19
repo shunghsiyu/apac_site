@@ -16,12 +16,15 @@ class OcwSpider(scrapy.Spider):
     def parse(self, response):
         image_url = response.css('#course_pic img::attr(src)').extract_first()
         title = response.css('#course_description h2::text').extract_first()
+        instructors = response.css('#course_description > h4.unit::text').extract()
         # Sometimes the `p` element is empty and doesn't contain any text
         # in such case using the `::text` selector will not select it
         info_element = response.css('#course_description > p')[0]
         info = '\n'.join(info_element.css('::text').extract())
         return ThumbnailCrawlerItem(
             title=title,
+            # Normalize the white-space
+            instructors=[' '.join(instructor.split()) for instructor in instructors],
             info=info,
             image_urls=[image_url],
             source=self.name,
