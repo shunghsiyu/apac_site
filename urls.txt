@@ -1,0 +1,137 @@
+臺大數位學習資源
+Preface
+Credits
+OCW
+1. 資訊科技：
+   1. 計算機概論
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S210 
+   1. 統計與生活
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/100S216
+   1. 機器學習
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S211
+   1. 數位語音處理概論
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/104S204
+
+
+
+
+1. 商管經濟：
+   1. 統計學
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/102S113
+   1. 財務管理
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S110
+   1. 農企業管理學
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/105S102       
+   1. 作業管理 (pending)
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S205
+   1. 經濟學原理
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/102S116
+   1. 實驗經濟學：行為賽局論（Experimental Economics ：Behavioral Game Theory）(English delivered)
+             http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/104S101
+   
+
+
+1. 認識Asia：
+   1. 台灣與東南亞藝術（Taiwan and Southeast Asian Arts）
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/100S118
+   1. 亞洲共同體：東亞文學與文化
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/103S209
+   1. 東亞文化：傳統與現代
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/099S107
+   1. 東亞儒家人文精神
+    http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S124
+
+
+
+
+
+
+1. 人文史地：
+   1. The Chamber of Red Dream
+   2. 臺灣文學在台大
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/100S119
+   1. 中國文學史
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/102S104
+   1. 哲學與人生
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/104S103
+   1. 愛情社會學
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S116
+   1. 白先勇崑曲之美講座
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/103S208
+   1. 臺灣民俗與民間文化
+            http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/100S207
+   1. 咖啡學
+    http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/104S207
+
+
+
+
+NTU MOOC x Coursera 
+1. 資訊科技：
+   1. 人工智慧（Artificial Intelligence）
+    https://zh-tw.coursera.org/learn/rengong-zhineng
+   1. 機率（Probability）
+    https://zh-tw.coursera.org/learn/prob1
+   1. 計算機程式設計
+    https://zh-tw.coursera.org/learn/c-bian-cheng
+   1. 機器學習基石上（Machine Learning Foundations --- Mathematical Foundations）
+    https://zh-tw.coursera.org/learn/ntumlone-mathematicalfoundations
+
+
+1. 商管經濟：
+   1. 職場素養（Professionalism）
+            https://zh-tw.coursera.org/learn/zhichang-suyang
+   1. 行銷典範轉移：變動中的消費世界（Marketing in a changing world）
+            https://zh-tw.coursera.org/learn/zhichang-suyang
+   1. 經濟學概論：誘因與市場（Introduction to Economics：Incentive and Markets）
+            https://zh-tw.coursera.org/learn/economics
+   1. 實驗經濟學（Experimental Economics I：Behavioral Game Theory）
+            https://zh-tw.coursera.org/learn/shiyan-jingji-xue
+   1. 商管研究中的賽局分析：通路選擇、合約制定與共享經濟
+    https://zh-tw.coursera.org/learn/gabr
+
+
+1. 認識Asia：
+2. 人文史地：
+   1. 史記（一）
+            https://zh-tw.coursera.org/learn/shiji
+   1. 東坡詞
+            https://zh-tw.coursera.org/learn/su-dongpo
+   1. 唐詩新思路
+        https://zh-tw.coursera.org/learn/tang-poems
+   1. 莊子－姿勢、意識與感情
+            https://zh-tw.coursera.org/learn/zhuangzi
+
+
+
+
+
+
+演講網
+1. 資訊科技：
+   1. 【2017春季展望科普演講】從感官到感測－淺談感測晶片高速整合技術與應用
+            http://speech.ntu.edu.tw/ntuspeech/Video/id-2472
+   1. 【2017春季展望科普演講】來自 GPS 的你－夾帶天氣密碼的電波訊號
+            http://speech.ntu.edu.tw/ntuspeech/Video/id-2473
+   1. 【2016秋季展望科普演講】駭客任務─手機攻防戰
+            http://speech.ntu.edu.tw/ntuspeech/Video/id-2394
+1. 商管經濟：
+   1. 【成功之母系列講座】35年的挑戰與危機給我的淬鍊
+            http://speech.ntu.edu.tw/ntuspeech/Video/id-2407
+   1. Pinkoi 共同創辦人兼執行長 Peter、克里斯多插畫森林 Crystal & Ray
+            http://speech.ntu.edu.tw/ntuspeech/Video/id-2330
+   1. 臺大創業談：學生創業這件事 I
+            http://speech.ntu.edu.tw/ntuspeech/Video/id-1922
+1. 認識Asia：
+   1. 東協經濟研究淺談
+            http://speech.ntu.edu.tw/ntuspeech/Video/id-150#
+1. 人文史地：
+   1. 【你的新媒體學伴】〈故事：寫給所有人的歷史〉X〈PanSci 泛科學〉
+            http://speech.ntu.edu.tw/ntuspeech/Video/id-2382
+   1. 【你的新媒體學伴】〈阿滴英文〉X〈臺灣吧〉
+            http://speech.ntu.edu.tw/ntuspeech/Video/id-2383
+   1. 傳統與現代在劇場接軌─《當代傳奇 經典三十》
+            http://speech.ntu.edu.tw/ntuspeech/Video/id-2357
+   1. 教育理論與實務對話：提升學習動機研討會：學校實踐優質經分享
+            https://speech.ntu.edu.tw/ntuspeech/Video/id-1426
+
