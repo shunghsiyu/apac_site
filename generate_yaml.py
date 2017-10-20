@@ -27,8 +27,25 @@ with jsonlines.open('output.jl', mode='r') as lines:
     data = list(lines)
 
 
-for obj in data:
+field_order = [
+    'title',
+    'instructors',
+    'info',
+    'images',
+    'image_urls',
+    'category',
+    'source',
+    'course_url',
+]
+def update_obj(obj):
     obj['info'] = folded_unicode(obj['info'])
+    mapping = ruamel.yaml.comments.CommentedMap()
+    for field in field_order:
+        mapping[field] = obj[field]
+    return mapping
+
+
+data = list(update_obj(obj) for obj in data)
 
 
 with open('output.yml', mode='w') as output_file:
