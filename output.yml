@@ -748,7 +748,8 @@
     info: >-
       為發揚研究與教學並重之理念並提供分享平台，特辦理第8屆「教育理論與實務對話：『提升學習動機』研討會」，敬邀各界教育先進撥冗蒞臨指導，為分享中等學校教師優良教案並鼓勵師培學生創新作品，本次研討會遴選出第三屆「臺大Super教案獎」創新教案並進行分享。
     images: []
-    image_urls: []
+    image_urls:
+      - https://speech.ntu.edu.tw/ntuspeech/img/thumb.jpg
     category: 人文史地
     source: speech
     course_url: https://speech.ntu.edu.tw/ntuspeech/Video/id-1426
@@ -825,7 +826,8 @@
     info: >-
       介紹東協經濟活動與相關研究
     images: []
-    image_urls: []
+    image_urls:
+      - https://speech.ntu.edu.tw/ntuspeech/img/thumb.jpg
     category: 認識亞洲
     source: speech
     course_url: http://speech.ntu.edu.tw/ntuspeech/Video/id-150
