@@ -30,7 +30,7 @@ class SpeechSpider(scrapy.Spider):
         info = response.css('div.video-infoall p.video-info::text').extract_first().strip()
         return ThumbnailCrawlerItem(
             title=title,
-            instructors=[instructor.strip() for instructor in instructors],
+            instructors=[dict(name=instructor.strip(), department='', position='') for instructor in instructors],
             info=info,
             image_urls=image_urls,
             source=self.name,

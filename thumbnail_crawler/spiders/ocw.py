@@ -24,7 +24,7 @@ class OcwSpider(scrapy.Spider):
         return ThumbnailCrawlerItem(
             title=title,
             # Normalize the white-space
-            instructors=[' '.join(instructor.split()) for instructor in instructors],
+            instructors=[dict(name=' '.join(instructor.split()), department='', position='') for instructor in instructors],
             info=info,
             image_urls=[image_url],
             source=self.name,

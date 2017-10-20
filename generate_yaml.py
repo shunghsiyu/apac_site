@@ -40,6 +40,7 @@ field_order = [
 def update_obj(obj):
     obj['info'] = folded_unicode(obj['info'])
     obj['images'] = list(order_mapping(image) for image in obj['images'])
+    obj['instructors'] = list(order_mapping(instructor, ['name', 'position', 'department']) for instructor in obj['instructors'])
     return order_mapping(obj, field_order)
 
 

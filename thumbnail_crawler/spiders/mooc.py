@@ -22,7 +22,9 @@ class MoocSpider(scrapy.Spider):
         instructors = [''.join(response.css('div.instructor-info p.instructor-name ::text').extract()[2:])]
         departments = response.css('div.instructor-info div.instructor-bio::text').extract()
         if departments:
-            instructors = [instructor+' '+department for instructor, department in zip(instructors, departments)]
+            instructors = [dict(name=instructor, department=department, position='') for instructor, department in zip(instructors, departments)]
+        else:
+            instructors = [dict(name=instructor, department='', position='') for instructor in instructors]
         info = response.css('div.about-section-wrapper div.content-inner p.course-description::text').extract_first()
         return ThumbnailCrawlerItem(
             title=title,
