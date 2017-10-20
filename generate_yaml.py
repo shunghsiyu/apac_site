@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import os
 import jsonlines 
 import ruamel.yaml
 
@@ -23,7 +24,7 @@ yaml.default_flow_style = False
 yaml.indent(mapping=2, sequence=4, offset=2)
 
 
-with jsonlines.open('output.jl', mode='r') as lines:
+with jsonlines.open('output-{}.jl'.format(os.environ['datetime']), mode='r') as lines:
     data = list(lines)
 
 
@@ -58,6 +59,6 @@ def data_keys(obj):
 data = list(update_obj(obj) for obj in sorted(data, key=data_keys))
 
 
-with open('output.yml', mode='w') as output_file:
+with open('output-{}.yml'.format(os.environ['datetime']), mode='w') as output_file:
     yaml.dump(data, output_file)
 
