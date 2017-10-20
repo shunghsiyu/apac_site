@@ -39,11 +39,14 @@ field_order = [
 ]
 def update_obj(obj):
     obj['info'] = folded_unicode(obj['info'])
+    obj['images'] = list(order_mapping(image) for image in obj['images'])
     return order_mapping(obj, field_order)
 
 
-def order_mapping(old_map, order):
+def order_mapping(old_map, order=None):
     new_map = ruamel.yaml.comments.CommentedMap()
+    if order is None:
+        order = sorted(old_map)
     for field in order:
         new_map[field] = old_map[field]
     return new_map
