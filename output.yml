@@ -499,11 +499,12 @@
     category: 商管經濟
     source: ocw
     course_url: http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/102S116
-  - title: 'Experimental Economics : Behavioral Game Theory (實驗經濟學：行為賽局論)'
+  - title: 實驗經濟學：行為賽局論
     instructors:
       - name: 王道一
         position: 教授
         department: 經濟系
+    english_course: true
     info: >-
       This is an upper division and graduate level course on experimental economics,
       focusing on behaviora...
@@ -553,6 +554,7 @@
       - name: 坂井 隆
         position: 教授
         department: 藝術史研究所
+    english_course: true
     info: >-
       Generally the Southeast Asian culture possible to see as a diversity historical
       complex of the local...
