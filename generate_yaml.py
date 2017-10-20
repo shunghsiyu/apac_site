@@ -52,7 +52,9 @@ def order_mapping(old_map, order=None):
     return new_map
     
 
-data = list(update_obj(obj) for obj in data)
+def data_keys(obj):
+    return obj['source'], obj['category'], obj['course_url']
+data = list(update_obj(obj) for obj in sorted(data, key=data_keys))
 
 
 with open('output.yml', mode='w') as output_file:
