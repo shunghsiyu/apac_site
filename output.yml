@@ -324,7 +324,7 @@
     course_url: https://zh-tw.coursera.org/learn/rengong-zhineng
   - title: 《新百家學堂》臺灣文學在臺大
     instructors:
-      - name:  齊邦媛
+      - name:  齊邦媛 等
         position: ''
         department: 出版中心
     info: >-
@@ -698,10 +698,10 @@
     instructors:
       - name: 謝佳螢
         position: 共同創辦人
-        department: 故事 Gushi
+        department: 故事
       - name: 雷雅淇
         position: 主編
-        department: PanSci 泛科學
+        department: 泛科學
     info: >-
       艱澀的學科知識，如何一夕成為大人小孩都愛看的網路超人氣點閱？
 
@@ -723,8 +723,8 @@
         position: 創辦人
         department: 阿滴英文
       - name: 蕭宇辰
-        position: 臺灣吧
-        department: 共同創辦人
+        position: 共同創辦人
+        department: 臺灣吧
     info: >-
       艱澀的學科知識，如何一夕成為大人小孩都愛看的網路超人氣點閱？
 
