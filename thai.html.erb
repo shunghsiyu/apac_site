@@ -1,0 +1,234 @@
+<%
+  def get_badge_type(source)
+
+    badge_type = "" 
+    case source 
+      when "ocw" 
+        badge_type = "success" 
+      when "mooc"
+        badge_type = "warning" 
+      when "speech" 
+        badge_type = "info" 
+    end
+    badge_type
+  end
+
+  def source_title(source)
+
+    title = "" 
+    case source 
+      when "ocw" 
+        title = "開放式課程" 
+      when "mooc"
+        title = "MOOC x Coursera" 
+      when "speech" 
+        title = "台大演講網" 
+    end
+    title
+  end
+
+  def display_instructors(instructors)
+    result = ""    
+
+    instructors.each_with_index do |instructor, index|
+      result << instructor["department"] + " " + instructor["name"]
+      if index < instructors.length - 1
+        result << "、"
+      end
+    end
+    
+    result
+  end
+%>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>國立臺灣大學高教線上資源 - 分享泰國入囗網站</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <style>
+            html {
+              font-size: 16px;
+            }
+
+            body { 
+              position: relative: 
+              min-height: 75rem; 
+              padding-top: 4.5rem; 
+              font-family: "Heiti TC","HeitiTC-Light","LiHei","微軟正黑體","Lato","Verdana","Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+            } 
+             
+            a.anchor { 
+              display: block; 
+              position: relative; 
+              top: -4.5rem; 
+              visibility: hidden; 
+            } 
+             
+            .ratio-4-3 { 
+              width: 100%; 
+              position: relative; 
+              background: url() 50% 50% no-repeat; 
+              background-size: cover; 
+              background-clip: content-box; 
+            } 
+             
+            .ratio-4-3:before { 
+              display: block; 
+              content: ""; 
+              padding-top: 56.25%; 
+            } 
+             
+            .course-header {
+              font-size: 16px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            .course-info-wrapper { 
+              width: 100%; 
+              display: inline-block; 
+              position: relative; 
+            } 
+             
+            .course-info-wrapper:after { 
+              padding-top: 137px; 
+              display: block; 
+              content: ''; 
+            } 
+             
+            .course-info-main { 
+              position: absolute; 
+              top: 0; 
+              bottom: 0; 
+              right: 0; 
+              left: 0; 
+              overflow: hidden; 
+            } 
+             
+            .title-link, .title-link:hover, .intro a, .intro a:hover {
+              color: #212529;
+            }
+
+            .footer {
+              background-color: #f7f7f7; 
+            }
+        </style>
+    </head>
+
+    <body data-spy="scroll" data-target="#navbar">
+        <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#about">國立臺灣大學高教線上資源 - 分享泰國入囗網站</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigatioa">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="#course-it">資訊科技</a>
+                        <a class="nav-item nav-link" href="#course-business">商管經濟</a>
+                        <a class="nav-item nav-link" href="#course-asia">認識亞洲</a>
+                        <a class="nav-item nav-link" href="#course-culture">人文史地</a>
+                    </div>                
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container">
+            <a class="anchor" id="about"></a>
+            <div class="jumbotron">
+              <p class="lead"><a target="_blank" href="https://ctld.ntu.edu.tw">國立臺灣大學教學發展中心</a> (臺大教發中心) 致力開展臺灣高等教育資源公共化，透過專業教學設計、高品質影視錄製與網路技術，將
+立基於臺灣的華文知識生產，可以跨國界與無時限地與全球公民社會互惠交流。</p>
+
+              <p class="lead"><a target="_blank" href="http://www.taiwanembassy.org/th/">臺灣駐泰國代表處</a>與臺大教發中心攜手合作，特別彙整包括 (1) 資訊科技、(2) 商管經濟、(3) 認識亞洲、(4) 人文史地等
+四大課群數十門課程，讓臺大優質教學資源可以在泰國在地社群有更多機會流通、利用與推廣，進一步讓臺灣和泰國在國際合作與發展做更緊密的社會聯繫與知識創新。</p>
+            </div>
+
+            <div>
+                <% @courses.each do |courses_each_type| %>
+                  <a class="anchor" id="course-<%= courses_each_type[:id] %>"></a>
+                  <h1 class="pb-2 mt-4"><%= courses_each_type[:title] %></h1>
+                  <div class="row">
+                    <% courses_each_type[:courses].each do |course| %>
+                      <div class="col-md-6 col-xl-4 mb-4">
+                        <div class="card">
+                          <a target="_blank" href="<%= course['course_url'] %>"><div class="img-responsive ratio-4-3" style="background-image:url('<%= course["images"][0].to_h["path"] %>')"></div></a>
+                          <div class="card-body">
+                            <div class="course-header mb-3">
+                              <span class="badge badge-<%= get_badge_type(course["source"]) %>"><%= source_title(course["source"]) %></span>
+                              <span class="card-subtitle text-muted ml-1 mb-1">
+                                <%= display_instructors(course["instructors"]) %>
+                              </span>
+                            </div>
+                            <div class="course-info-wrapper mb-2">
+                              <div class="course-info-main">
+                                <h4 class="card-title"><a class="title-link" target="_blank" href="<%= course['course_url'] %>"><%= course["title"] %></a></h4>
+                                <p>
+                                  <% if course.has_key? "english_course" %>
+                                    <span class="badge badge-danger mr-1">英語授課</span>
+                                  <% end %>
+                                  <%= course["info"] %>
+                                </p>
+                              </div>
+                            </div>
+                            <a class="btn btn-primary" target="_blank" href="<%= course['course_url'] %>">前往課程</a>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
+            </div>
+        </div> 
+        <footer class="footer">
+            <div class="container">
+                <div class="row py-4">
+                    <div class="col-md-6">
+                        <h6><a class="footer-link text-dark" target="_blank" href="https://ctld.ntu.edu.tw">臺灣大學教學發展中心</a></h6>
+                        <ul class="text-muted list-unstyled">
+                            <li><small>E-mail: ntuctld@ntu.edu.tw</small></li>
+                            <li><small>TEL: 886-2-3366-3367</small></li>
+                            <li><small>FAX: 886-2-3366-9594</small></li>
+                            <li><small>地址：10607 臺北市羅斯福路四段一號</small></li>
+                            <li><small>No.1, Sec, 4, Roosevelt Road, Taipei, 10617 Taiwan</small></li>
+                        </ul>
+                        <a target="_blank" href="https://ctld.ntu.edu.tw"><img class="mr-1" style="height: 50px; width: 50px;" src="images/ctld_logo.png"></a>
+                        <a target="_blank" href="https://www.ntu.edu.tw"><img style="height: 50px; width: 50px;" src="images/ntu_logo.png"></a>
+                    </div>
+                    <div class="col-md-6">
+                        <h6><a class="footer-link text-dark" target="_blank" href="http://www.taiwanembassy.org/th/">駐泰國台北經濟文化辦事處</a></h6>
+                        <ul class="text-muted list-unstyled">
+                            <li><small>TEL: 066-2-670-0200</small></li>
+                            <li><small>FAX: 66-2-670-0220</small></li>
+                            <li><small>地址：20th Fl., Empire Tower, 1 South Sathorn Rd., Bangkok, 10120 Thailand</small></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+<script>
+$(document).ready(function() {
+  $('#navbar a').on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function() {
+        window.location.hash = hash;
+      });
+    }
+  });
+});
+</script>
+
+    </body>
+</html>
