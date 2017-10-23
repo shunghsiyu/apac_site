@@ -129,6 +129,107 @@
             .footer {
               background-color: #f7f7f7; 
             }
+
+.course-info-title {
+  display: -webkit-box;  
+  overflow:hidden;
+  text-overflow : ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: black;
+}
+.course-info-text {
+  line-height:1.5;
+  display: -webkit-box;  
+  overflow:hidden;
+  text-overflow : ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  color: black;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 80px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  height: 80%;
+  width: 90%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  display: block;
+  overflow: hidden;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .go {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-size: 30px;
+  z-index: 101;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .text {
+  display: -webkit-box;  
+  padding-left: 55%;
+  height: 385px;
+  line-height:1.5;
+  overflow: hidden;
+  text-overflow : ellipsis;
+  -webkit-line-clamp: 3;
+  z-index: 100;
+}
+.bounding-box {
+  background-size: 50% 400px;
+  top: 5%;
+  position: absolute;
+  background-position: left;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+}
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
         </style>
     </head>
 
@@ -162,33 +263,51 @@
             </div>
 
             <div>
-                <% @courses.each do |courses_each_type| %>
+                <% @courses.each_with_index do |courses_each_type,i| %>
                   <a class="anchor" id="course-<%= courses_each_type[:id] %>"></a>
                   <h1 class="pb-2 mt-4"><%= courses_each_type[:title] %></h1>
                   <div class="row">
-                    <% courses_each_type[:courses].each do |course| %>
+                    <% courses_each_type[:courses].each_with_index do |course,j| %>
                       <div class="col-md-6 col-xl-4 mb-4">
                         <div class="card">
-                          <a target="_blank" href="<%= course['course_url'] %>"><div class="img-responsive ratio-4-3" style="background-image:url('<%= course["images"][0].to_h["path"] %>')"></div></a>
+                          <a href="#popup<%=i %><%=j %>"><div class="img-responsive ratio-4-3" style="background-image:url('<%= course["images"][0].to_h["path"] %>')"></div></a>
                           <div class="card-body">
                             <div class="course-header mb-3">
                               <span class="badge badge-<%= get_badge_type(course["source"]) %>"><%= source_title(course["source"]) %></span>
+                              <% if course.has_key? "english_course" %>
+                                <span class="badge badge-danger mr-1">英語授課</span>
+                              <% end %>
                               <span class="card-subtitle text-muted ml-1 mb-1">
                                 <%= display_instructors(course["instructors"]) %>
                               </span>
                             </div>
                             <div class="course-info-wrapper mb-2">
                               <div class="course-info-main">
-                                <h4 class="card-title"><a class="title-link" target="_blank" href="<%= course['course_url'] %>"><%= course["title"] %></a></h4>
-                                <p>
-                                  <% if course.has_key? "english_course" %>
-                                    <span class="badge badge-danger mr-1">英語授課</span>
-                                  <% end %>
+                                <h4 class="card-title"><a href="#popup<%=i %><%=j %>"><%= course["title"] %></a></h4>
+                                <p><a href="#popup<%=i %><%=j %>">
                                   <%= course["info"] %>
-                                </p>
+                                </a></p>
                               </div>
                             </div>
                             <a class="btn btn-primary" target="_blank" href="<%= course['course_url'] %>">前往課程</a>
+                            <div id="popup<%=i%><%=j%>" class="overlay">
+                              <div class="popup">
+                                <h2><a class="title-link" target="_blank" href="<%= ['course_url'] %>"><%= course["title"] %></a></h2>
+                                <p>
+                                  <span class="card-subtitle text-muted ml-1 mb-1"><%= display_instructors(course["instructors"]) %></span><br>
+                                  <span class="badge badge-<%= get_badge_type(course["source"]) %>"><%= source_title(course["source"]) %></span>
+                                  <% if course.has_key? "english_course" %>
+                                      <span class="badge badge-danger mr-1">英語授課</span>
+                                  <% end %>
+                                </p>
+                                <a class="close" href="#course-<%= courses_each_type[:id] %>">&times;</a>
+                                <h4><a class="btn btn-success go" target="_blank" href="<%= course['course_url'] %>">Enroll</a></h4>
+                                <div class="img-responsive bounding-box" style="background-image:url('<%= course["images"][0].to_h["path"] %>')"></div>
+                                <div class="text">
+                                  <p><%= course["info"] %></p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
