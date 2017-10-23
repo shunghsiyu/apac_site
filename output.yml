@@ -105,7 +105,7 @@
     category: 人文史地
     source: mooc
     course_url: https://zh-tw.coursera.org/learn/zhuangzi
-  - title: '經濟學概論：誘因與市場（Introduction to Economics: Incentive and Markets）'
+  - title: 經濟學概論：誘因與市場
     instructors:
       - name: 林明仁
         position: 教授
@@ -322,7 +322,7 @@
     category: 資訊科技
     source: mooc
     course_url: https://zh-tw.coursera.org/learn/rengong-zhineng
-  - title: 《新百家學堂》臺灣文學在臺大
+  - title: 臺灣文學在臺大
     instructors:
       - name:  齊邦媛 等
         position: ''
@@ -338,7 +338,7 @@
     category: 人文史地
     source: ocw
     course_url: http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/100S119
-  - title: 《新百家學堂》臺灣民俗與民間文化
+  - title: 臺灣民俗與民間文化
     instructors:
       - name: 洪淑苓
         position: ''
@@ -386,7 +386,7 @@
     category: 人文史地
     source: ocw
     course_url: http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/102S104
-  - title: 《新百家學堂》白先勇崑曲之美講座
+  - title: 白先勇崑曲之美講座
     instructors:
       - name: 白先勇
         position: 教授
@@ -586,7 +586,7 @@
     category: 認識亞洲
     source: ocw
     course_url: http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S124
-  - title: 《新百家學堂》亞洲共同體：東亞文學與文化
+  - title: 亞洲共同體：東亞文學與文化
     instructors:
       - name: 梅家玲
         position: 教授
