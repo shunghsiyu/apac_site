@@ -122,8 +122,12 @@
               overflow: hidden; 
             } 
              
-            .title-link, .title-link:hover, .intro a, .intro a:hover {
+            .title-link, .title-link:hover, .info-link, .info-link:hover  {
               color: #212529;
+            }
+
+            .info-link:hover {
+              text-decoration: none;
             }
 
             .footer {
@@ -283,8 +287,8 @@
                             </div>
                             <div class="course-info-wrapper mb-2">
                               <div class="course-info-main">
-                                <h4 class="card-title"><a href="#popup<%=i %><%=j %>"><%= course["title"] %></a></h4>
-                                <p><a href="#popup<%=i %><%=j %>">
+                                <h4 class="card-title"><a class="title-link" href="#popup<%=i %><%=j %>"><%= course["title"] %></a></h4>
+                                <p><a class="info-link" href="#popup<%=i %><%=j %>">
                                   <%= course["info"] %>
                                 </a></p>
                               </div>
