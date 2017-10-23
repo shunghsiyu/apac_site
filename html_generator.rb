@@ -1,6 +1,5 @@
 require 'erb'
 require 'yaml'
-require 'json'
 
 courses_it = { id: "it", title: "資訊科技", courses: [] }
 courses_business = { id: "business", title: "商管經濟", courses: []}
@@ -21,8 +20,6 @@ course_hashes.each do |course|
       courses_culture[:courses] << course
   end
 end
-
-puts courses_it
 
 @courses = [courses_it, courses_business, courses_asia, courses_culture]
 
