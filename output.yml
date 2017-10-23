@@ -151,7 +151,7 @@
     category: 商管經濟
     source: mooc
     course_url: https://zh-tw.coursera.org/learn/gabr
-  - title: 實驗經濟學
+  - title: 'Experimental Economics: Behavioral Game Theory'
     instructors:
       - name: 王道一
         position: 副教授
@@ -549,7 +549,7 @@
     category: 認識亞洲
     source: ocw
     course_url: http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/099S107
-  - title: 臺灣與東南亞藝術
+  - title: Taiwan and Southeast Asian Arts
     instructors:
       - name: 坂井 隆
         position: 教授
