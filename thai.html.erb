@@ -408,10 +408,8 @@ $(document).ready(function() {
 
 window.onclick = function(event) {
   <% @courses.each_with_index do |courses_each_type,i| %>
-    <% courses_each_type[:courses].each_with_index do |course,j| %>
-      if (event.target == mod<%=i%>a<%=j%>b) { mod<%=i%>a<%=j%>b.style.display = "none"; }
-    <% end %>
-  <% end %>
+  <% courses_each_type[:courses].each_with_index do |course,j| %> if (event.target == mod<%=i%>a<%=j%>b) { mod<%=i%>a<%=j%>b.style.display = "none"; } 
+  <% end %><% end %>
 }
 </script>
     </body>
