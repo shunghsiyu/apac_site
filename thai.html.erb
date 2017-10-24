@@ -136,7 +136,7 @@
               display: -webkit-box;  
               overflow:hidden;
               text-overflow : ellipsis;
-              -webkit-line-clamp: 2;
+              -webkit-line-clamp: 3;
               -webkit-box-orient: vertical;
             }
             .title-link, .title-link:hover, .info-link, .info-link:hover  {
@@ -307,8 +307,8 @@
                             </div>
                             <div class="course-info-wrapper mb-2">
                               <div class="course-info-main">
-                                <h4 id="button<%=i%>a<%=j%>b1" class="card-title"><%= course["title"] %></h4>
-                                <p id="button<%=i%>a<%=j%>b2" class="info-link course-info-text">
+                                <h4 id="button<%=i%>a<%=j%>b1" class="course-info-title"><%= course["title"] %></h4>
+                                <p id="button<%=i%>a<%=j%>b2" class="course-info-text">
                                   <%= course["info"] %>
                                 </p>
                               </div>
