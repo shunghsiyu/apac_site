@@ -161,110 +161,11 @@
             .footer {
               background-color: #f7f7f7; 
             }
-/* The Modal (background) */
-  .modal {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: hidden; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-      -webkit-animation-name: fadeIn; /* Fade in the background */
-      -webkit-animation-duration: 0.4s;
-  }
-
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-/*    margin: 15% auto; /* 15% from the top and centered */ 
-    border: 1px solid #888;
-    position: relative;
-    width: 70%;
-    height: 80%;
-    top: 0%;
-    left: 38%;
-    margin-left: -20%; /* Negative half of width. */
-    margin-top: 6% ; /* Negative half of height. */
-    overflow: hidden;
-}
-
-/* The Close Button */
-.close {
-    color: gray;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header {
-    padding: 20px 30px;
-    color: black;
-    float: left;
-}
-
-.modal-body {
-  padding: 2px 16px;
-}
-.modal-body-image {
-    width: 50%;
-    height: 450px;
-    float: left;
-    padding: 15px;
-    padding-top: 12%;
-/*    border: 1px solid red;*/
-}
-.modal-body-text {
-    width: 50%;
-    height: 450px;
-    float: left;
-    padding: 15px;
-/*    border: 1px solid red;*/
-    line-height:1.5;
-    display: -webkit-box;  
-    overflow: auto;
-    text-overflow : ellipsis;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    color: black;
-}
-.modal-footer {
-    bottom  : 0;
-    padding: 2px 16px;
-}
-
-/* Add Animation */
-@-webkit-keyframes slideIn {
-    from {bottom: -300px; opacity: 0} 
-    to {bottom: 0; opacity: 1}
-}
-
-@keyframes slideIn {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
-}
-
-@-webkit-keyframes fadeIn {
-    from {opacity: 0} 
-    to {opacity: 1}
-}
-
-@keyframes fadeIn {
-    from {opacity: 0} 
-    to {opacity: 1}
-}
-
-
+            .vcenter {
+              display: inline-block;
+              vertical-align: middle;
+              float: none;
+            }
         </style>
     </head>
 
@@ -330,7 +231,7 @@
                     <% courses_each_type[:courses].each_with_index do |course,j| %>
                       <div class="col-md-6 col-xl-4 mb-4">
                         <div class="card">
-                          <div id="button<%=i%>a<%=j%>b0" class="img-responsive ratio-4-3" style="background-image:url('<%= course["images"][0].to_h["path"] %>')"></div>
+                          <div class="img-responsive ratio-4-3" style="background-image:url('<%= course["images"][0].to_h["path"] %>')" data-toggle="modal" data-target="#modal<%=i%><%=j%>"></div>
                           <div class="card-body">
                             <div class="course-header mb-3">
                               <span class="badge badge-<%= get_badge_type(course["source"]) %>"><%= source_title(course["source"]) %></span>
@@ -343,55 +244,49 @@
                             </div>
                             <div class="course-info-wrapper mb-2">
                               <div class="course-info-main">
-                                <h4 id="button<%=i%>a<%=j%>b1" class="card-title course-info-title"><%= course["title"] %></h4>
-                                <p id="button<%=i%>a<%=j%>b2" class="info-link course-info-text">
+                                <h4 class="course-info-title" data-toggle="modal" data-target="#modal<%=i%><%=j%>"><%= course["title"] %></h4>
+                                <p class="course-info-text" data-toggle="modal" data-target="#modal<%=i%><%=j%>">
                                   <%= course["info"] %>
                                 </p>
                               </div>
-                            </div>
+							              </div >
                             <a class="btn btn-primary" target="_blank" href="<%= course['course_url'] %>">前往課程</a>
-                            <div id="modal<%=i%>a<%=j%>b" class="modal">
-                              <!-- Modal content -->
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h2><%= course["title"] %></h2>
-                                  <span id="close<%=i%>a<%=j%>b" class="close">&times;</span>
-                                </div>
-                                <div class="modal-body">
-                                  <div class="modal-body-image">
-                                    <div class="img-responsive ratio-4-3" style="background-image:url('<%= course["images"][0].to_h["path"] %>')"></div>
-                                  </div>
-                                  <div>
-                                    <p class="modal-body-text">
-                                      <%= course["info"] %>
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="modal-footer">
-                                  <p><a class="btn btn-primary" target="_blank" href="<%= course['course_url'] %>">前往課程</a></p>
-                                </div>
-                              </div>
-                            </div>
-<script>
-// Get the modal
-var mod<%=i%>a<%=j%>b = document.getElementById('modal<%=i%>a<%=j%>b');
-// Get the button that opens the modal
-var btn<%=i%>a<%=j%>b0 = document.getElementById("button<%=i%>a<%=j%>b0");
-var btn<%=i%>a<%=j%>b1 = document.getElementById("button<%=i%>a<%=j%>b1");
-var btn<%=i%>a<%=j%>b2 = document.getElementById("button<%=i%>a<%=j%>b2");
-// Get the <span> element that closes the modal
-var span<%=i%>a<%=j%>b = document.getElementById("close<%=i%>a<%=j%>b");
-// When the user clicks the button, open the modal 
-btn<%=i%>a<%=j%>b0.onclick = function() { mod<%=i%>a<%=j%>b.style.display = "block"; }
-btn<%=i%>a<%=j%>b1.onclick = function() { mod<%=i%>a<%=j%>b.style.display = "block"; }
-btn<%=i%>a<%=j%>b2.onclick = function() { mod<%=i%>a<%=j%>b.style.display = "block"; }
-// When the user clicks on <span> (x), close the modal
-span<%=i%>a<%=j%>b.onclick = function() { mod<%=i%>a<%=j%>b.style.display = "none"; }
-// When the user clicks anywhere outside of the modal, close it
-//window.onclick = function(event) {
-//  if (event.target == mod<%=i%>a<%=j%>b) { mod<%=i%>a<%=j%>b.style.display = "none"; }
-//}
-</script>
+<!-- Modal -->
+<div class="modal fade" id="modal<%=i%><%=j%>" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title"><%= course["title"] %></h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col">
+            <img class="w-100" src="<%= course["images"][0].to_h["path"] %>">
+          </div>
+          <div class="col">
+            <span class="badge badge-<%= get_badge_type(course["source"]) %>"><%= source_title(course["source"]) %></span>
+            <% if course.has_key? "english_course" %>
+              <span class="badge badge-danger mr-1">英語授課</span>
+            <% end %>
+            <span class="card-subtitle text-muted ml-1 mb-1">
+              <%= display_instructors(course["instructors"]) %>
+            </span>
+            <p>             
+            <%= course["info"] %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+        <a target="_blank" href="<%= course['course_url'] %>"><button type="button" class="btn btn-primary">前往課程</button></a>
+      </div>
+    </div>
+  </div>
+</div>                          
                           </div>
                         </div>
                       </div>
@@ -468,13 +363,6 @@ $(document).ready(function() {
   });
 });
 
-window.onclick = function(event) {
-  <% @courses.each_with_index do |courses_each_type,i| %>
-    <% courses_each_type[:courses].each_with_index do |course,j| %>
-      if (event.target == mod<%=i%>a<%=j%>b) { mod<%=i%>a<%=j%>b.style.display = "none"; }
-    <% end %>
-  <% end %>
-}
 </script>
     </body>
 </html>
