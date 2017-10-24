@@ -46,7 +46,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>國立臺灣大學高教線上資源 - 分享泰國入囗網站</title>
+        <title>國立臺灣大學泰國數位課程</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
@@ -63,16 +63,6 @@
               font-family: "Heiti TC","HeitiTC-Light","LiHei","微軟正黑體","Lato","Verdana","Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
             } 
              
-            .navbar>.container {
-              flex-wrap: nowrap;
-            }
-
-            .navbar-brand {
-              overflow: hidden;
-              text-overflow: ellipsis;
-              flex-basis: 50rem;
-            }
-
             a.anchor { 
               display: block; 
               position: relative; 
@@ -260,16 +250,26 @@
     <body data-spy="scroll" data-target="#navbar">
         <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#intro">國立臺灣大學高教線上資源 - 分享泰國入囗網站</a>
+                <a class="navbar-brand" href="#intro">國立臺灣大學泰國數位課程</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigatioa">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#course-it">資訊科技</a>
-                        <a class="nav-item nav-link" href="#course-business">商管經濟</a>
-                        <a class="nav-item nav-link" href="#course-asia">認識亞洲</a>
-                        <a class="nav-item nav-link" href="#course-culture">人文史地</a>
+                        <a class="nav-item nav-link" href="#guide">學習指引</a>
+
+                        <div class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            數位課程
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#course-it">資訊科技</a>
+                            <a class="dropdown-item" href="#course-business">商管經濟</a>
+                            <a class="dropdown-item" href="#course-asia">認識亞洲</a>
+                            <a class="dropdown-item" href="#course-culture">人文史地</a>
+                          </div>
+                        </div>
+                        <a class="nav-item nav-link" href="#faq">常見問題</a>
                         <a class="nav-item nav-link" href="#about">關於我們</a>
                     </div>                
                 </div>
@@ -280,11 +280,25 @@
         <div class="container">
             <a class="anchor" id="intro"></a>
             <div class="jumbotron">
-              <p class="lead"><a target="_blank" href="https://ctld.ntu.edu.tw">國立臺灣大學教學發展中心</a> (臺大教發中心) 致力開展臺灣高等教育資源公共化，透過專業教學設計、高品質影視錄製與網路技術，將
-立基於臺灣的華文知識生產，可以跨國界與無時限地與全球公民社會互惠交流。</p>
+              <p class="lead">國立臺灣大學長年致力於公共教育，將校內好課、好演講數位化並公開。本網站集結了來自臺大開放式課程、臺大 MOOC 與臺大演講網的精選內容，分為資訊科技、商管經濟、認識亞洲、人文史地等四大類，讓知識跨越國界與時間的限制，與全人類共享。</p>
+            </div>
 
-              <p class="lead"><a target="_blank" href="http://www.taiwanembassy.org/th/">臺灣駐泰國代表處</a>與臺大教發中心攜手合作，特別彙整包括 (1) 資訊科技、(2) 商管經濟、(3) 認識亞洲、(4) 人文史地等
-四大課群數十門課程，讓臺大優質教學資源可以在泰國在地社群有更多機會流通、利用與推廣，進一步讓臺灣和泰國在國際合作與發展做更緊密的社會聯繫與知識創新。</p>
+            <a class="anchor" id="guide"></a>
+            <div class="card bg-light">
+              <h4 class="card-header">
+                學習指引
+              </h4>
+              <div class="card-body">
+                <p>本網站收集以下三類完全公開、完全免費的數位內容：</p>
+                <h5><a target="_blank" href="http://ocw.aca.ntu.edu.tw/ntu-ocw/">一、臺大開放式課程</a></h5>
+                <p>將教師實體授課內容側錄並公開，讓學習者可與臺大學生聆聽一樣的授課內容。欲修習者僅須點擊課程連結，即可立即收看影片並下載教材。</p>
+
+                <h5><a target="_blank" href="https://zh-tw.coursera.org/taiwan">二、臺大 MOOC（Massive Online Open Course）</a></h5>
+                <p>由教師專門進棚為校外學習者製作之數位課程，放置於國際平臺 coursera。欲修習者僅須於 coursera 用一分鐘簡單註冊帳號，即可收看包含臺大在內上百間世界名校之線上課程。</p>
+
+                <h5><a target="_blank" href="https://speech.ntu.edu.tw/ntuspeech/">三、臺大演講網</a></h5>
+                <p>將國內外知名學者、人士於臺大之演講側錄並公開。</p>
+              </div>
             </div>
 
             <div>
@@ -364,12 +378,27 @@ span<%=i%>a<%=j%>b.onclick = function() { mod<%=i%>a<%=j%>b.style.display = "non
                   </div>
                 <% end %>
             </div>
+
+            <a class="anchor" id="faq"></a>
+            <div class="card mb-4">
+              <h4 class="card-header">常見問題</h4>
+              <div class="card-body">
+                <h5>Q1：網站上的內容全部都免費嗎？怎麼會有這麼好的事？</h5>
+                <p>A：是的，全部免費，這是因為臺大做為世界的一份子，有向所有人傳遞知識的社會責任。</p>
+
+                <h5>Q2：網站上共有多少課程、演講呢？</h5>
+                <p>A：臺大開放式課程上共有超過 XXX 門課程、臺大 MOOC 上面有超過 30 門課程、臺大演講網上則有超過 XXX 場演講。這些課程或演講全部都可以在臺大網站上找到喔！</p>
+
+                <h5>Q3：有沒有生醫、理化、法律、工程等領域的課程或演講呢？</h5>
+                <p>A：有的！歡迎到<a target="_blank" href="http://ocw.aca.ntu.edu.tw/ntu-ocw/">臺大開放式課程</a>、<a target="_blank" href="https://zh-tw.coursera.org/taiwan">臺大 MOOC</a> 或<a target="_blank" href="https://speech.ntu.edu.tw/">臺大演講網</a>的首頁搜尋或瀏覽喔！</p>
+              </div>
+            </div>
+
             <a class="anchor" id="about"></a>
             <div class="card mb-4">
               <h4 class="card-header">關於我們</h4>
               <div class="card-body">
-                <p><a target="_blank" href="https://ctld.ntu.edu.tw">國立臺灣大學教學發展中心</a> (臺大教發中心) 致力開展臺灣高等教育資源公共化，透過專業教學設計、高品質影視錄製與網路技術，將
-立基於臺灣的華文知識生產，可以跨國界與無時限地與全球公民社會互惠交流。</p>
+                <p><a target="_blank" href="https://ctld.ntu.edu.tw">國立臺灣大學教學發展中心</a> (臺大教發中心) 致力開展臺灣高等教育資源公共化，透過專業教學設計、高品質影視錄製與網路技術，將立基於臺灣的華文知識生產，可以跨國界與無時限地與全球公民社會互惠交流。</p>
 
                 <p><a target="_blank" href="http://www.taiwanembassy.org/th/">臺灣駐泰國代表處</a>與臺大教發中心攜手合作，特別彙整包括 (1) 資訊科技、(2) 商管經濟、(3) 認識亞洲、(4) 人文史地等
 四大課群數十門課程，讓臺大優質教學資源可以在泰國在地社群有更多機會流通、利用與推廣，進一步讓臺灣和泰國在國際合作與發展做更緊密的社會聯繫與知識創新。</p>
