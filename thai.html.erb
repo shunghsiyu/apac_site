@@ -1,5 +1,5 @@
 <%
-  title = "國立臺灣大學泰國數位課程"
+  title = "國立臺灣大學數位學習資源"
   description = "國立臺灣大學長年致力於公共教育，將校內好課、好演講數位化並公開。本網站集結了來自臺大開放式課程、臺大 MOOC 與臺大演講網的精選內容，分為資訊科技、商管經濟、認識亞洲、人文史地等四大類，讓知識跨越國界與時間的限制，與全人類共享。"
 
   def get_badge_type(source)
@@ -87,7 +87,7 @@
             a.anchor { 
               display: block; 
               position: relative; 
-              top: -4.5rem; 
+              top: -5rem; 
               visibility: hidden; 
             } 
              
@@ -172,7 +172,7 @@
     <body data-spy="scroll" data-target="#navbar">
         <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#intro">國立臺灣大學泰國數位課程</a>
+                <a class="navbar-brand" href="#slogan">國立臺灣大學數位學習資源</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigatioa">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -200,8 +200,10 @@
 
 
         <div class="container">
+            <a class="anchor" id="slogan"></a>
             <a class="anchor" id="intro"></a>
-            <div class="jumbotron">
+            <div class="jumbotron mt-2">
+              <h2 class="mb-4">臺灣駐泰國代表處與臺大教發中心合作精選線上課程</h2>
               <p class="lead"><%= description %></p>
             </div>
 
