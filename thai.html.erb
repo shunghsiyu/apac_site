@@ -94,6 +94,10 @@
               visibility: hidden; 
             } 
              
+            .course-container .card {
+              cursor: pointer;
+            }
+
             .ratio-4-3 { 
               width: 100%; 
               position: relative; 
@@ -226,15 +230,15 @@
               </div>
             </div>
 
-            <div>
+            <div class="course-container">
                 <% @courses.each_with_index do |courses_each_type,i| %>
                   <a class="anchor" id="course-<%= courses_each_type[:id] %>"></a>
                   <h1 class="pb-2 mt-4"><%= courses_each_type[:title] %></h1>
                   <div class="row">
                     <% courses_each_type[:courses].each_with_index do |course,j| %>
                       <div class="col-md-6 col-xl-4 mb-4">
-                        <div class="card">
-                          <div class="img-responsive ratio-4-3" style="background-image:url('<%= course["images"][0].to_h["path"] %>')" data-toggle="modal" data-target="#modal<%=i%><%=j%>"></div>
+                        <div class="card" data-toggle="modal" data-target="#modal<%=i%><%=j%>">
+                          <div class="img-responsive ratio-4-3" style="background-image:url('<%= course["images"][0].to_h["path"] %>')"></div>
                           <div class="card-body">
                             <div class="course-header mb-3">
                               <span class="badge badge-<%= get_badge_type(course["source"]) %>"><%= source_title(course["source"]) %></span>
@@ -247,49 +251,49 @@
                             </div>
                             <div class="course-info-wrapper mb-2">
                               <div class="course-info-main">
-                                <h4 class="course-info-title" data-toggle="modal" data-target="#modal<%=i%><%=j%>"><%= course["title"] %></h4>
-                                <p class="course-info-text" data-toggle="modal" data-target="#modal<%=i%><%=j%>">
+                                <h4 class="course-info-title"><%= course["title"] %></h4>
+                                <p class="course-info-text">
                                   <%= course["info"] %>
                                 </p>
                               </div>
 							              </div >
-                            <a class="btn btn-primary" target="_blank" href="<%= course['course_url'] %>">前往課程</a>
-<!-- Modal -->
-<div class="modal fade" id="modal<%=i%><%=j%>" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title"><%= course["title"] %></h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col">
-            <img class="w-100" src="<%= course["images"][0].to_h["path"] %>">
-          </div>
-          <div class="col">
-            <span class="badge badge-<%= get_badge_type(course["source"]) %>"><%= source_title(course["source"]) %></span>
-            <% if course.has_key? "english_course" %>
-              <span class="badge badge-danger mr-1">英語授課</span>
-            <% end %>
-            <span class="card-subtitle text-muted ml-1 mb-1">
-              <%= display_instructors(course["instructors"]) %>
-            </span>
-            <p>             
-            <%= course["info"] %>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-        <a target="_blank" href="<%= course['course_url'] %>"><button type="button" class="btn btn-primary">前往課程</button></a>
-      </div>
-    </div>
-  </div>
-</div>                          
+                            <a class="btn btn-primary" target="_blank" href="<%= course['course_url'] %>" onclick="event.stopPropagation();">前往課程</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Modal -->
+                      <div class="modal fade" id="modal<%=i%><%=j%>" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 class="modal-title"><%= course["title"] %></h2>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="row">
+                                <div class="col">
+                                  <img class="w-100" src="<%= course["images"][0].to_h["path"] %>">
+                                </div>
+                                <div class="col">
+                                  <span class="badge badge-<%= get_badge_type(course["source"]) %>"><%= source_title(course["source"]) %></span>
+                                  <% if course.has_key? "english_course" %>
+                                    <span class="badge badge-danger mr-1">英語授課</span>
+                                  <% end %>
+                                  <span class="card-subtitle text-muted ml-1 mb-1">
+                                    <%= display_instructors(course["instructors"]) %>
+                                  </span>
+                                  <p>
+                                  <%= course["info"] %>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                              <a target="_blank" href="<%= course['course_url'] %>"><button type="button" class="btn                       btn-primary">前往課程</button></a>
+                            </div>
                           </div>
                         </div>
                       </div>
