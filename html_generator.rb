@@ -3,7 +3,7 @@ require 'yaml'
 
 courses_it = { id: "it", title: "資訊科技", courses: [] }
 courses_business = { id: "business", title: "商管經濟", courses: []}
-courses_asia = { id: "asia", title: "認識亞洲", courses: []}
+courses_asia = { id: "asia", title: "認識亞太", courses: []}
 courses_culture = { id: "culture", title: "人文史地", courses: []}
 
 course_hashes = YAML.load(File.open("output.yml").read)
