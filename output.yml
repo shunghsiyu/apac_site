@@ -456,6 +456,22 @@
     category: 商管經濟
     source: ocw
     course_url: http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/105S102
+  - title: 太平洋島嶼世界
+    instructors:
+      - name: 童元昭
+        position: 副教授
+        department: 人類系
+    info: >-
+      這門課的目的，在於介紹學生熟悉太平洋群島的人與文化。在島嶼有限的環境中，自然的力量相對強大，而文化愈益顯得活潑有彈性，也成就了豐富多樣的屬於太平洋的文化。太平洋群島地理上與台灣接近；而與台灣原住民族所...
+    images:
+      - checksum: 6f536ec45bdb305676af92755daba195
+        path: full/0db5b5adccc63626d325e57d60da6c3f1c5056e8.jpg
+        url: http://ocw.aca.ntu.edu.tw/ntu-ocw/files/110px/099S105.jpg
+    image_urls:
+      - http://ocw.aca.ntu.edu.tw/ntu-ocw/files/110px/099S105.jpg
+    category: 認識亞洲
+    source: ocw
+    course_url: http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/099S105
   - title: 東亞文化：傳統與現代
     instructors:
       - name: 黃俊傑
